@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script href="./style.css"></script>
+    </head>
+    <body>
+        <script>
+        const timer = setInterval(logAnimation, 500, "こんにちは！ようこそ○○の世界へ。冒険の始まりです");
+        let counttimer = 0;
+        function logAnimation(str){
+            document.write(str.substr(counttimer, counttimer + 1 - counttimer));
+            if(counttimer >= str.length){
+                clearInterval(timer);
+                console.log("終了");
+            }
+        counttimer++;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <script src="app.js" defer></script>
+    </head>
+    <body>
+        <div id="app">
+            <div :class="{'is-drawerActive' :isMenuActive}">
+                <div class="button-wrapper">
+                    <button type="button" class="button js-drawer" aria-expanded="false" aria-controls="nav" @click="menuOpen">メニュー</button>
+                    <button type="charabutton" class="button js-chara">キャラクター</button>
+                </div>
+                
+                <nav id="nav" class="drawer">
+                    <ul>
+                        <li v-for="(nav, index) in navlist" :key="index"><a href="#">{{ nav }}</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    <!-- <div class="button-wrapper">
+        <button type="button" class="button js-drawer" aria-expanded="false" aria-contorols="nav">ボタン</button>
+        <button class="button js-chara">キャラクター</button>
+    </div>
+
+    <nav id="nav" class="drawer">
+        <ul>
+        <li><a href="">図鑑</a></li>
+        <li><a href="">対戦</a></li>
+        <li><a href="">ショップ</a></li>
+        <li><a href="">道具</a></li>
+        <li><a href="">ポケモン</a></li>
+        </ul>
+    </nav>
+    <div class="js-panel panel" aria-hidden="true">
+        <img src="./img/fushigidane.png" alt="" />
+    </div> -->
+    </body>
+</html>

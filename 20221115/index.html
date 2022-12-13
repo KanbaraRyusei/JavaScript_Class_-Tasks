@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./app.js" defer></script>
+</head>
+<body>
+    <div id="app">
+        <h1>ゲーム制作掲示板用フォーム</h1>
+        <label for="type">種別</label>
+        <select id="type" v-model="selected">
+            <option value="" disabled>選択してください</option>
+            <option :value="item" v-for="(item, index) in items" :key="index">{{ item }}</option>
+        </select>
+        <br />
+
+        <label for="contact">内容</label>
+        <textarea id="contact" cols="30" rows="10" v-model="message"></textarea>
+        <br>
+
+        <label for="priority">優先度</label>
+        <select id="priority" v-model="priority">
+            <option :value="val" v-for="(val, index) in priorities" :key="index">{{ val }}</option>
+        </select>
+        <br />
+
+        <label for=""><input type="radio" value="男" v-model="gender">男性</label>
+        <label for=""><input type="radio" value="女" v-model="gender">女性</label>
+        <br />
+        <ul>
+            <li v-for="(send, index) in contactlist" :key="index">
+                <label for=""><input type="checkbox" :value="send" v-model="sendlist">{{ send }}</label>
+            </li>
+        </ul>
+        <hr />
+        <h2>内容確認</h2>
+        <p>種別:{{ selected }}</p>
+        <p>内容: {{ message }}</p>
+        <p>優先度: {{ priority }}</p>
+        <p>性別:{{ gender }}</p>
+        <p>購読＆フォロー{{ sendlist }}</p>
+    </div>
+
+    <!-- <div id="counter">
+        Counter: {{ counter }}
+    </div>
+
+    <div id="attibute-bindid">
+        <span v-text="message"></span>
+    </div>
+
+    <div id="event-handling">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">文字を反対に表示</button>
+    </div>
+
+    <div id="twoway-binding">
+        <p>{{ message }}</p>
+        <input type="text" v-model="message">
+    </div>
+
+    <div id="conditional-renderling">
+        <span v-if="isShow">表示非表示切り替え</span>
+        <button type="button" v-on:click="change">表示非表示切り替えボタン</button>
+    </div>
+
+    <div id="list-renderling">
+        <ol>
+            <li v-for="todo in todos">{{ todo.text }}</li>
+        </ol>
+    </div> -->
+</body>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./pokemon.css" />
+        <script src="app.js" defer></script>
+    </head>
+    <body>
+        <div class="button-wrapper">
+            <button type="button" class="button js-drawer" aria-expanded="false" aria-controls="nav">ボタン</button>
+            <button class="button js-chara">キャラクター</button>
+        </div>
+        <nav id="nav" class="drawer">
+        <ul>
+            <li><a href="">図鑑</a></li>
+            <li><a href="">対戦</a></li>
+            <li><a href="">ショップ</a></li>
+            <li><a href="">道具</a></li>
+            <li><a href="">ポケモン</a></li>
+        </ul>
+        </nav>
+        <div class="js-panel panel" aria-hidden="true">
+            <img src="https://gyazo.com/91f230441c844bbf1ee5b382a75b7497.png" />
+        </div>
+        <!-- <img id="test" width="600" height="600" src="https://gyazo.com/91f230441c844bbf1ee5b382a75b7497.png">
+        <script>
+            let im = document.getElementById("test");
+            im.src = "https://gyazo.com/91f230441c844bbf1ee5b382a75b7497.png";
+            let isshow = false;
+            function switchshoworhide(){
+                if(isshow){
+                    hide();
+                }
+                else{
+                    show();
+                }
+                isshow = !isshow;
+            }
+            function show(){
+
+                console.log("show");
+            }
+            function hide(){
+                console.log("hide");
+            }
+            let ispokemonshow = false;
+            function swichpokemonshow(){
+                if(ispokemonshow){
+                    pokemonhide();
+                }
+                else{
+                    pokemonshow();
+                }
+                ispokemonshow = !ispokemonshow;
+            }
+            function pokemonshow(){
+                im.src = "https://cdn.discordapp.com/attachments/990993127944896573/998999939105435708/CC0BDA05-B8FA-4E7D-A7D8-7887461C7B09.jpg";
+                console.log("pokemonshow");
+            }
+            function pokemonhide(){
+                im.src = "https://cdn.discordapp.com/attachments/990993127944896573/997499115481083954/SNOW_20220715_224207_896.jpg";
+                console.log("pokemonhide");
+            }
+            </script> -->
+</body>
+</html>

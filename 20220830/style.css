@@ -1,0 +1,25 @@
+.titlestr{
+    position: absolute;
+    left: 550px;
+    font-size: 50px;
+}
+
+.text-style{
+    position: absolute;
+    top: 200px;
+    left: 700px;
+    font-size: 50px;
+}
+
+.button-nomal{
+    position: absolute;
+    top: 500px;
+    left: 550px;
+}
+
+button{
+    width: 200px;
+    height: 50px;
+    background: linear-gradient(90deg, rgb(50, 146, 205) 0%, rgb(172, 243, 255) 50%, rgb(152, 229, 251) 100%);
+    color:  red;
+}
