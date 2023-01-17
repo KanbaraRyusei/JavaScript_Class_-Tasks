@@ -44,6 +44,32 @@
         <p>優先度: {{ priority }}</p>
         <p>性別:{{ gender }}</p>
         <p>購読＆フォロー{{ sendlist }}</p>
+        
+        <button type="button" v-bind:aria-expanded="isExpanded">ぼたん</button>
+        <p v-show="isShow">表示非表示</p>
+        <p v-if="isMobile">v-ifのmobileがtrueの場合表示</p>
+        <p v-else>mobileがfalseの場合表示</p>
+
+        <textarea id="inputBloodType" cols="2" rows="1" v-model="bloodType"></textarea>
+
+        <p v-if="bloodType === 'A'">今日の運勢：そこそこ</p>
+        <p v-else-if="bloodType === 'B'">今日の運勢：わるくない</p>
+        <p v-else-if="bloodType === 'AB'">今日の運勢：いいんじゃね</p>
+        <p v-else-if="bloodType === 'O'">今日の運勢：やべー</p>
+        <p v-else>なにやってんだお前ーーー！！</p>
+
+        <ul>
+            <li v-for="i in 10">{{i}}回目のループ</li>
+        </ul>
+
+        <ul>
+            <li v-for="w in works">{{w}}</li>
+        </ul>
+
+        <ul>
+            <li v-for="(w, index) in works" :key="index">{{index+1}}:{{w}}</li>
+        </ul>
+
     </div>
 
     <!-- <div id="counter">

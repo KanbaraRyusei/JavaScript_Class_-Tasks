@@ -8,7 +8,12 @@ const App = Vue.createApp({
             contactlist: ["メルマガを購読する", "Twitterをフォローする", "Instagramをフォローする"],
             message: "",
             gender: "",
-            sendlist: []
+            sendlist: [],
+            isExpanded: false,
+            isShow: true,
+            isMobile: true,
+            bloodType: "A",
+            works: ["Game", "Scenario", "Character Design", "Document", "Program"]
         }
     }
     }
