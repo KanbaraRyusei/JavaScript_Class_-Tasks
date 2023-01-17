@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding:0;
+}
+body{
+    padding: 10rem 20%;
+    background-color: #fff;
+}
+.drawer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 5rem;
+    background-color: #222;
+    color: #fff;
+    transform: translate3d(100%, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.hamburger{
+    appearance: none;
+    position: fixed;
+    top: 3rem;
+    right: 3rem;
+    z-index: 2;
+    width: 6rem;
+    height: 5rem;
+    border-radius: 50%;
+}
