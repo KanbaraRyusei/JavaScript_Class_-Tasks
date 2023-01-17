@@ -13,11 +13,22 @@ const App = Vue.createApp({
             isShow: true,
             isMobile: true,
             bloodType: "A",
-            works: ["Game", "Scenario", "Character Design", "Document", "Program"]
+            works: ["Game", "Scenario", "Character Design", "Document", "Program"],
+            person: {
+                name: "近藤",
+                age: 16
+            },
+            count: 100,
+        };
+    },
+    methods: {
+        countDown() {
+        this.count--;
+        this.count = Math.max(0, this.count);
         }
-    }
-    }
-);
+    },
+}
+)
 
 App.mount("#app");
 // const Counter = {

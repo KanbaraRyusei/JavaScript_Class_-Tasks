@@ -70,6 +70,13 @@
             <li v-for="(w, index) in works" :key="index">{{index+1}}:{{w}}</li>
         </ul>
 
+        <button type="button" v-on:click="person.age++">カウントアップ</button>
+
+        <p>{{person.name}} は {{person.age}}歳</p>
+
+        <button type="button" v-on:click="countDown">カウントダウン</button>
+        <p>{{count}}</p>
+
     </div>
 
     <!-- <div id="counter">
