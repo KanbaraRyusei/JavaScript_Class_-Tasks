@@ -10,10 +10,12 @@
 </head>
     <body>
         <div id="app">
-            <button type="button" v-on:click="drawer">ボタン</button>
-            <ul v-if="isActive">
-                <li v-for="i in items">{{i}}</li>
-            </ul>
-        </div>
+            <button type="button" class="hamburger" v-on:click="drawer">Menu</button>
+            <nav class="globalNav" :class="{'is-drawerActive':isActive}">
+                <ul class="drawer">
+                    <li v-for="(item,index) in items" :key="index">{{item}}</li>
+                </ul>
+            </nav>
+            </div>
     </body>
 </html>
