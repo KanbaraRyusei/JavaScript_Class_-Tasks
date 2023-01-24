@@ -7,7 +7,6 @@ Vue.createApp({
     },
     methods:{
         drawer(){
-            //isActiveのtrue/falseを反転させる
             this.isActive = !this.isActive;
         },
     },
