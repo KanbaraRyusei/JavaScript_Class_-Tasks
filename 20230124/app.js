@@ -8,10 +8,16 @@ Vue.createApp({
             error: "",
             lists: ["課題1を終わらせる", "課題2を終わらせる", "課題3を終わらせる"],
             taskName: "",
+            taskError: "",
         };
     },
     methods:{
         addTask(){
+            if(this.taskName == ""){
+                this.taskError = "Erorr : 空白です";
+                return;
+            }
+            this.taskError = "";
             this.lists.push(this.taskName);
         }
     },
@@ -38,7 +44,7 @@ Vue.createApp({
         lists:{
             handler(newTask, oldtask){
                 // sessionStrageにデータを一時保存する
-                sessionStorage.setItem(newTask, newTask);
+                sessionStorage.setItem("newTasks", JSON.stringify(newTask));
             },
             deep: true,
         }
