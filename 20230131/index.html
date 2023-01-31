@@ -21,9 +21,15 @@
                 <option :value="val" v-for="(val,index) in priorities" :key="index">{{val}}</option>
             </select>
 
-        <p><button type="button" @click="addTask">登録</button></p>
+        <p><button type="button" v-on:click="addTask">登録</button></p>
 
         <p id="taskList">タスク一覧</p>
-        <p v-for="">・{{}}</p>
+        <ul>
+            <li v-for="(list, index) in lists" :key="index">
+                <p>タスク名：{{list.taskName}}</p>
+                <p>期日：{{list.date}}</p>
+                <p>優先度：{{list.priority}}</p>
+            </li>
+        </ul>
     </div>
 </body>
