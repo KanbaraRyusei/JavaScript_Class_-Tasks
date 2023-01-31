@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="app">
+        <p id="taskApp">タスク管理アプリ</p>
+        <label>タスク名：<input type="text" v-model="taskName"></label>
+        <br>
+        <label>期日：<input type="date" v-model="dateData"></label>
+        <br>
+        <label for="priority">優先度</label>
+            <select id="priority" v-model="priority">
+                <option :value="val" v-for="(val,index) in priorities" :key="index">{{val}}</option>
+            </select>
+
+        <p><button type="button" @click="addTask">登録</button></p>
+
+        <p id="taskList">タスク一覧</p>
+        <p v-for="">・{{}}</p>
+    </div>
+</body>
