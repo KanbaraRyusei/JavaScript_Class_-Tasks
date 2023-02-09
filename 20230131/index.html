@@ -12,23 +12,43 @@
 <body>
     <div id="app">
         <p id="taskApp">タスク管理アプリ</p>
-        <label>タスク名：<input type="text" v-model="taskName"></label>
+        <bt><label>タスク名：</bt><dd><input type="text" v-model="taskName"></dd></label>
         <br>
-        <label>期日：<input type="date" v-model="dateData"></label>
+        <dt><label>期日：</dt><dd><input type="date" v-model="dateData"></dd></label>
         <br>
-        <label for="priority">優先度</label>
-            <select id="priority" v-model="priority">
+        <dt><label for="priority">優先度</label></dt>
+            <dd><select id="priority" v-model="priority">
                 <option :value="val" v-for="(val,index) in priorities" :key="index">{{val}}</option>
             </select>
+        </dd>
 
         <p><button type="button" v-on:click="addTask">登録</button></p>
 
-        <p id="taskList">タスク一覧</p>
+        <p id="tasklist">タスク一覧</p>
+        <dl>
+            <dt><label for="sort">並び替え</label></dt>
+            <dd>
+                <select id="sort" v-model="sort">
+                    <option value="asc">昇順</option>
+                    <option value="desc">降順</option>
+                </select>
+            </dd>
+            <dt><label for="filter">優先度</label></dt>
+        <dd>
+            <select id="filter" v-model="filter">
+                <option value="all">全て</option>
+                <option :value="index" v-for="(val,index) in priorities" :key="index">{{val}}</option>
+            </select>
+        </dd>
+            <dt><label for="search">フリーワード検索</label></dt>
+            <dd><input type="search" id="search" v-model="search"></dd>
+        </dl>
         <ul>
-            <li v-for="(list, index) in lists" :key="index">
+            <li v-for="(list, index) in results" :key="list">
                 <p>タスク名：{{list.taskName}}</p>
-                <p>期日：{{list.date}}</p>
+                <p>期日：{{dataFormat(list.date)}}</p>
                 <p>優先度：{{list.priority}}</p>
+                <p>登録日:{{dataFormat(list.publish)}}</p>
             </li>
         </ul>
     </div>
